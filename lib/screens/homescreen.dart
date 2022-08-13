@@ -13,6 +13,26 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackGroundColor,
+      appBar: AppBar(
+        backgroundColor: kBackGroundColor,
+        elevation: 0.0,
+        leading: IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.menu,
+            color: kTextColor,
+          ),
+        ),
+        actions: const [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
+            child: Icon(
+              Icons.notifications_none_outlined,
+              color: kTextColor,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
