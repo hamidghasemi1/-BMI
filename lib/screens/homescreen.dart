@@ -1,4 +1,5 @@
 import 'package:bmi/constants/contstans.dart';
+import 'package:bmi/screens/result_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -342,19 +343,28 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(
             height: 30.0,
           ),
-          Container(
-            height: 50,
-            decoration: BoxDecoration(
-              color: kGreenColor,
-              borderRadius: BorderRadius.circular(15.0),
-            ),
-            child: Center(
-              child: Text(
-                'Calculate',
-                style: TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                  color: kItemColor,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ResultScreen(),
+                  ));
+            },
+            child: Container(
+              height: 50,
+              decoration: BoxDecoration(
+                color: kGreenColor,
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+              child: Center(
+                child: Text(
+                  'Calculate',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                    color: kItemColor,
+                  ),
                 ),
               ),
             ),

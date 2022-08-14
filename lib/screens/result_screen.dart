@@ -74,26 +74,31 @@ class ResultScreen extends StatelessWidget {
                     ]),
               ),
             ),
-             const SizedBox(
-            height: 30.0,
-          ),
-          Container(
-            height: 50,
-            decoration: BoxDecoration(
-              color: kGreenColor,
-              borderRadius: BorderRadius.circular(15.0),
+            const SizedBox(
+              height: 30.0,
             ),
-            child: Center(
-              child: Text(
-                'ReCalculate BMI',
-                style: TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                  color: kItemColor,
+            GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Container(
+                height: 50,
+                decoration: BoxDecoration(
+                  color: kGreenColor,
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                child: Center(
+                  child: Text(
+                    'ReCalculate BMI',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                      color: kItemColor,
+                    ),
+                  ),
                 ),
               ),
             ),
-          ),
           ],
         ),
       ),
