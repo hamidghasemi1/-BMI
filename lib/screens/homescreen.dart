@@ -13,6 +13,9 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   Gender? gender;
+  int weight = 60;
+  int height = 160;
+  int age = 20;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,7 +98,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             Icon(
                               Icons.male,
-                              color: Colors.blue,
+                              color: gender == Gender.male
+                                  ? Colors.blue
+                                  : kTextColor,
                               size: 100.0,
                             ),
                             Text(
@@ -147,7 +152,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             Icon(
                               Icons.female,
-                              color: Colors.pink,
+                              color: gender == Gender.female
+                                  ? Colors.pink
+                                  : kTextColor,
                               size: 100.0,
                             ),
                             Text(
@@ -196,11 +203,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                setState(() {
+                                  weight--;
+                                });
+                              },
                               icon: Icon(Icons.remove_circle),
                             ),
                             Text(
-                              '60',
+                              weight.toString(),
                               style: TextStyle(
                                 fontSize: 20.0,
                                 fontWeight: FontWeight.bold,
@@ -208,7 +219,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                setState(() {
+                                  weight++;
+                                });
+                              },
                               icon: Icon(Icons.add_circle),
                             ),
                           ],
@@ -245,11 +260,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                setState(() {
+                                  height--;
+                                });
+                              },
                               icon: Icon(Icons.remove_circle),
                             ),
                             Text(
-                              '160',
+                              height.toString(),
                               style: TextStyle(
                                 fontSize: 20.0,
                                 fontWeight: FontWeight.bold,
@@ -257,7 +276,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                setState(() {
+                                  height++;
+                                });
+                              },
                               icon: Icon(Icons.add_circle),
                             ),
                           ],
@@ -290,11 +313,15 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      age -= 1;
+                    });
+                  },
                   icon: Icon(Icons.remove_circle),
                 ),
                 Text(
-                  '160',
+                  age.toString(),
                   style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
@@ -302,7 +329,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      age += 1;
+                    });
+                  },
                   icon: Icon(Icons.add_circle),
                 ),
               ],
