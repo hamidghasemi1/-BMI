@@ -339,6 +339,26 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
+          const SizedBox(
+            height: 30.0,
+          ),
+          Container(
+            height: 50,
+            decoration: BoxDecoration(
+              color: kGreenColor,
+              borderRadius: BorderRadius.circular(15.0),
+            ),
+            child: Center(
+              child: Text(
+                'Calculate',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                  color: kItemColor,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
