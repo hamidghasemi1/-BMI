@@ -3,7 +3,15 @@ import 'package:flutter/material.dart';
 import '../constants/contstans.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({Key? key}) : super(key: key);
+  const ResultScreen({
+    required this.bmiResult,
+    required this.resultText,
+    required this.interPratation,
+    Key? key,
+  }) : super(key: key);
+  final String bmiResult;
+  final String resultText;
+  final String interPratation;
 
   @override
   Widget build(BuildContext context) {
@@ -48,27 +56,31 @@ class ResultScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
-                        'vazn ide al',
-                        style: TextStyle(
+                        resultText,
+                        style: const TextStyle(
                           fontSize: 22.0,
                           fontWeight: FontWeight.bold,
                           color: kResultColor,
                         ),
                       ),
                       Text(
-                        '24.1',
-                        style: TextStyle(
+                        bmiResult,
+                        style: const TextStyle(
                           fontSize: 100.0,
                           fontWeight: FontWeight.bold,
                           color: kItemColor,
                         ),
                       ),
-                      Text(
-                        'che badan sexy',
-                        style: TextStyle(
-                          fontSize: 22.0,
-                          fontWeight: FontWeight.bold,
-                          color: kTextColor,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15.0,),
+                        child: Text(
+                          interPratation,
+                          style: const TextStyle(
+                            fontSize: 22.0,
+                            fontWeight: FontWeight.bold,
+                            color: kTextColor,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
                       ),
                     ]),
